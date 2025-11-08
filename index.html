@@ -3,274 +3,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Books — Coach Tejaswi</title>
+  <title>Coach Tejaswi — Author & Coach</title>
+  <meta name="description" content="Tejaswi Khanna — writer, coach. Books: Embracing Failure, Awaken Each Day. Reflections, short practices and stories to help you live with more presence.">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #f7f3ee;
-      --card: #ffffff;
-      --accent: #b98b4a;
-      --text:#111;
+      --bg:#f7f3ee;
+      --card:#fff;
+      --accent:#b98b4a;
       --muted:#6b6b6b;
-      --radius:14px;
+      --text:#111;
       --container:1100px;
+      --radius:12px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      font-family:Inter,system-ui,Segoe UI,Arial;
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.5;
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:var(--container);margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#f1e6da,#f7f3ee);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);
+      box-shadow:0 6px 18px rgba(0,0,0,0.06)
     }
-    .site-wrap{
-      max-width:var(--container);
-      margin:36px auto;
-      padding:28px;
-    }
-    header h1{
-      margin:0 0 6px;
-      font-family:'Playfair Display',serif;
-      font-size:34px;
-      letter-spacing:0.2px;
-    }
-    header p.lead{
-      margin:6px 0 26px;
-      color:var(--muted);
-      max-width:760px;
-      font-size:15px;
-    }
-
-    /* Book showcase */
-    .showcase{
-      display:grid;
-      gap:28px;
-    }
-
-    .book-row{
-      display:flex;
-      gap:28px;
-      align-items:center;
-      background:var(--card);
-      padding:22px;
-      border-radius:var(--radius);
-      box-shadow:0 8px 28px rgba(20,20,20,0.06);
-    }
-
-    /* Left: image column */
-    .book-cover{
-      flex: 0 0 420px;
-      max-width:42%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .book-cover img{
-      width:100%;
-      height:auto;
-      max-width:420px;
-      border-radius:10px;
-      box-shadow:0 12px 30px rgba(14,14,14,0.12);
-      display:block;
-    }
-
-    /* Right: meta column */
-    .book-meta{ flex:1 1 0%; }
-    .available{
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-    .book-meta h2{
-      margin:0 0 8px;
-      font-family:'Playfair Display',serif;
-      font-size:26px;
-    }
-    .book-meta h3{
-      margin:0 0 14px;
-      font-size:15px;
-      color:#444;
-      font-weight:600;
-    }
-    .book-meta p{
-      margin:0 0 18px;
-      color:#222;
-      font-size:15px;
-      line-height:1.6;
-      max-width:680px;
-    }
-
-    .ctas{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .btn{
-      background:var(--accent);
-      color:#fff;
-      padding:10px 16px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:600;
-      display:inline-block;
-      box-shadow: 0 6px 18px rgba(185,139,74,0.18);
-    }
-    .btn.secondary{
-      background:transparent;
-      color:#333;
-      border:1px solid #e7ddd0;
-      padding:9px 14px;
-      font-weight:600;
-    }
-    .muted-link{
-      color:var(--muted);
-      text-decoration:underline;
-      font-size:14px;
-    }
-
-    /* Smart Buy Dropdown */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown button.btn {
-      cursor: pointer;
-    }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 200px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      padding: 8px 0;
-      margin-top: 6px;
-      z-index: 10;
-    }
-    .dropdown-menu li {
-      list-style: none;
-    }
-    .dropdown-menu li a {
-      display: block;
-      padding: 10px 14px;
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .dropdown-menu li a:hover {
-      background-color: #f4e9dc;
-      color: #000;
-      border-radius: 6px;
-    }
-
-    /* Responsive */
-    @media (max-width: 880px){
-      .book-row{ flex-direction:column; text-align:center; }
-      .book-cover{ width:60%; max-width:320px; }
-      .book-meta p{ max-width:100%; }
-    }
-
-    .space{height:18px}
+    .brand h1{font-family:'Playfair Display',serif;font-size:18px;margin:0}
+    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333}
+    nav a.primary{background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(185,139,74,0.12)}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr; text-align:center} .hero-right{order: -1} }
+    .hero-left h2{font-family:'Playfair Display',serif;font-size:40px;line-height:1.02;margin:0 0 12px}
+    .hero-left p.lead{color:var(--muted);font-size:17px;margin:0 0 18px;max-width:680px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.ghost{background:transparent;border:1px solid #e7ddd0;color:#333;padding:9px 14px}
+    /* Right column (cover + small bio) */
+    .hero-right{display:flex;flex-direction:column;gap:14px;align-items:center}
+    .cover-large{width:100%;max-width:320px;border-radius:12px;box-shadow:0 18px 38px rgba(14,14,14,0.12);overflow:hidden}
+    .cover-large img{width:100%;height:auto;display:block}
+    .mini-bio{background:var(--card);padding:12px;border-radius:12px;max-width:340px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.04)}
+    .mini-bio p{margin:0;color:#333;font-size:14px}
+    /* footer */
+    footer{margin-top:36px;padding-top:18px;border-top:1px solid rgba(0,0,0,0.04);display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+    footer small{color:var(--muted)}
+    /* modal (subscribe) */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(6,6,6,0.45);display:none;align-items:center;justify-content:center;z-index:50}
+    .modal{background:#fff;padding:18px;border-radius:12px;max-width:520px;width:92%;box-shadow:0 18px 48px rgba(10,10,10,0.18)}
+    .modal h3{margin:0 0 10px;font-family:'Playfair Display',serif}
+    .modal form{display:flex;gap:10px;flex-wrap:wrap}
+    .modal input[type="email"]{flex:1;padding:10px 12px;border:1px solid #e6e0d6;border-radius:8px}
+    .modal button{padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;border:none}
+    /* tiny helpers */
+    .muted{color:var(--muted);font-size:14px}
   </style>
 </head>
-
 <body>
-  <main class="site-wrap" role="main">
+  <div class="wrap">
     <header>
-      <h1>My Books</h1>
-      <p class="lead">Reflections, stories and short practices — a small library for quieter mornings and braver afternoons.</p>
+      <a href="/" class="brand" aria-label="Coach Tejaswi homepage">
+        <div class="logo">CT</div>
+        <div>
+          <h1>Coach Tejaswi</h1>
+          <div class="muted" style="font-size:12px;margin-top:2px">Writer • Coach • Storyteller</div>
+        </div>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/books" class="">Books</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="#" id="subscribeBtn" class="primary">Subscribe</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <section class="showcase" aria-label="Books showcase">
+    <main class="hero" role="main">
+      <div class="hero-left">
+        <h2>Small daily reflections. Big quiet changes.</h2>
+        <p class="lead">Short essays, tiny practices and stories that help you meet failure with curiosity and wake up each day with calm. Author of <em>Embracing Failure</em> and upcoming <em>Awaken Each Day</em>.</p>
 
-      <!-- Book 1: Embracing Failure -->
-      <article class="book-row" id="wb-embracing-failure" aria-labelledby="ef-title">
-        <div class="book-cover">
-          <img src="assets/images/embracing-failure-cover.jpg" alt="Cover of Embracing Failure by Tejaswi Khanna">
+        <div class="hero-ctas">
+          <a class="btn" href="/books">See the books</a>
+          <a class="btn ghost" href="/about">About me</a>
         </div>
 
-        <div class="book-meta">
-          <div class="available">Available now</div>
-          <h2 id="ef-title">Embracing Failure</h2>
-          <h3>When things fall apart, you rise stronger</h3>
+        <div style="margin-top:18px" class="muted">Latest: Kintsugi essay — shared on LinkedIn. <a href="/books" style="text-decoration:underline">Read more</a></div>
+      </div>
 
-          <p>
-            <strong>Embracing Failure</strong> reflects on the fragile, honest moments when life seems to crack. Using personal stories, practical exercises, and the gentle philosophy of kintsugi, this book shows how brokenness can become a map back to yourself — clearer, kinder, and more whole.<br>
-<strong>Failure</strong><br> We’ve all met it — in exams, in careers, in love, in dreams that never took flight. But what if failure was never your enemy at all? What if it was your most patient teacher, quietly shaping the person you’re meant to become?<br>
-
-In Embracing Failure, Tejaswi Khanna takes readers on a reflective journey through stories, parables, and gentle practices that reframe how we see our stumbles. Through the eyes of two seekers — Ishaan and Dev — and through tales of mountains, rivers, broken vases, and phoenixes, this book becomes both mirror and map for anyone who’s ever fallen and wondered if they could rise again.<br>
-
-Each chapter ends with Reflection Nuggets and Practical Exercises that turn philosophy into experience — inviting you not to rush through, but to walk with the book, to let it breathe with you.
-
-Written with simplicity and depth, Embracing Failure is less a self-help manual and more a spiritual companion — reminding us that every fall holds a lesson, every crack lets the light in, and that the teacher we seek often hides in the very places we resist.
-          </p>
-
-          <div class="ctas">
-            <div class="dropdown">
-              <button class="btn" onclick="toggleBuyMenu()">Buy Now ▾</button>
-              <ul id="buyMenu" class="dropdown-menu">
-                <li><a href="https://amzn.in/d/jknLJSG" target="_blank" rel="noopener">Buy on Amazon</a></li>
-                <li><a href="https://www.flipkart.com/embracing-failure/p/itmb0fd019d08c8f" target="_blank" rel="noopener">Buy on Flipkart</a></li>
-                <li><a href="https://notionpress.com/in/read/embracing-failure?srsltid=AfmBOorGy727YHJwHF_05RabrKYFAYgPIhTWkkuwzJdlu9VPQB9KEisx" target="_blank" rel="noopener">Buy on Notion Press</a></li>
-		<li><a href="href="https://amzn.in/d/6nhq8vN" target="_blank" rel="noopener">Buy on Amazon Kindle</a></li>
-              </ul>
-            </div>
-            
-          </div>
-        </div>
-      </article>
-
-      <div class="space" aria-hidden="true"></div>
-
-      <!-- Book 2: Awaken Each Day -->
-      <article class="book-row" id="wb-awaken-each-day" aria-labelledby="aed-title">
-        <div class="book-cover">
-          <img src="assets/images/awaken-each-day-cover.png" alt="Cover of Awaken Each Day by Tejaswi Khanna">
+      <aside class="hero-right" aria-label="Featured book">
+        <div class="cover-large">
+          <img src="assets/images/embracing-failure.jpg" alt="Embracing Failure book cover">
         </div>
 
-        <div class="book-meta">
-          <div class="available">Coming December 2025</div>
-          <h2 id="aed-title">Awaken Each Day</h2>
-          <h3>365 Reflections for the Soul</h3>
-
-          <p>
-            <strong>Awaken Each Day</strong> is a daily companion for presence — short reflections, tiny practices, and gentle prompts designed to help you start each day with curiosity and calm. A book to read a page at a time, and return to again and again.
-A daily book of reflection and mindfulness, blending ancient wisdom with modern life. Short reflections to pause, breathe, and reconnect — a one-year companion for presence. very morning carries a whisper — a chance to begin again.
-Awaken Each Day is not just a book to read, but a companion to return to — a space to pause, breathe, and realign with what truly matters.<br>
-
-Through 365 reflections, Tejaswi Khanna invites you to explore the subtle corners of the soul — where fear softens into courage, chaos turns into clarity, and ordinary moments reveal quiet grace.
-Each page offers a gentle awakening — a reminder that growth is not found in grand leaps, but in small, conscious steps taken every day.<br>
-
-Whether you begin your day with it or close your night in its silence, Awaken Each Day will guide you to live with more awareness, calm, and compassion — one reflection at a time.
-          </p>
-
-          <div class="ctas">
-           <!-- <a class="btn" href="/notify">Notify me</a> -->
-            
-          </div>
+        <div class="mini-bio">
+          <p><strong>Embracing Failure</strong> — a short book about how broken moments teach us to be whole. Available on Amazon, Flipkart and Notion Press.</p>
         </div>
-      </article>
+      </aside>
+    </main>
 
-    </section>
-  </main>
+    <footer>
+      <small>© <span id="year"></span> Tejaswi Khanna</small>
+      <div class="muted">Follow: <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank">LinkedIn</a> • <a href="https://instagram.com" target="_blank">Instagram</a></div>
+    </footer>
+  </div>
+
+  <!-- Subscribe modal -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <h3>Get launch updates</h3>
+      <p class="muted">Enter your email and I’ll notify you when <em>Awaken Each Day</em> is ready.</p>
+      <form id="subscribeForm" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Notify me</button>
+      </form>
+      <div style="margin-top:10px;text-align:right"><button onclick="closeModal()" style="background:none;border:none;color:#666;cursor:pointer">Close</button></div>
+    </div>
+  </div>
 
   <script>
-    function toggleBuyMenu() {
-      const menu = document.getElementById('buyMenu');
-      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-      // Close when clicking outside
-      document.addEventListener('click', function handler(e) {
-        if (!menu.contains(e.target) && e.target.tagName !== 'BUTTON') {
-          menu.style.display = 'none';
-          document.removeEventListener('click', handler);
-        }
-      });
+    // small interactions
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const modal = document.getElementById('modal');
+    const subscribeBtn = document.getElementById('subscribeBtn');
+    subscribeBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+
+    function openModal(){
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
     }
+    function closeModal(){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+    // close when clicking outside
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeModal();
+    });
   </script>
 </body>
 </html>
