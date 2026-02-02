@@ -1,235 +1,318 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Coach Tejaswi — Author & Coach</title>
-  <meta name="description" content="Tejaswi Khanna — writer, coach. Books: Embracing Failure, Awaken Each Day. Reflections, short practices and stories to help you live with more presence.">
+  <meta name="description"
+    content="Tejaswi Khanna — writer, coach. Books: Embracing Failure, Awaken Each Day. Reflections, short practices and stories to help you live with more presence." />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Coach Tejaswi — Author & Coach" />
+  <meta property="og:description"
+    content="Writer, coach, and storyteller. Author of Embracing Failure and Awaken Each Day." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://coachtejaswi.com" />
+  <meta property="og:image" content="https://coachtejaswi.com/assets/images/coachtejaswi-heroimg.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coach Tejaswi — Author & Coach" />
+  <meta name="twitter:description"
+    content="Writer, coach, and storyteller. Author of Embracing Failure and Awaken Each Day." />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    :root{
-      --bg:#f7f3ee;
-      --card:#fff;
-      --accent:#b98b4a;
-      --muted:#6b6b6b;
-      --text:#111;
-      --container:1100px;
-      --radius:12px;
+    /* Homepage Specific Styles */
+
+    /* Hero Section Override for homepage */
+    header.page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 20px 0;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    .wrap{max-width:var(--container);margin:28px auto;padding:20px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .brand .logo{
-      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#f1e6da,#f7f3ee);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);
-      box-shadow:0 6px 18px rgba(0,0,0,0.06)
+
+    /* Hero Banner - Full Width */
+    .hero-banner {
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      overflow: hidden;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 28px;
     }
-    .brand h1{font-family:'Playfair Display',serif;font-size:18px;margin:0}
-    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center}
-    nav a{font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333}
-    nav a.primary{background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(185,139,74,0.12)}
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
-    @media (max-width:900px){ .hero{grid-template-columns:1fr; text-align:center} .hero-right{order: -1} }
-    .hero-left h2{font-family:'Playfair Display',serif;font-size:40px;line-height:1.02;margin:0 0 12px}
-    .hero-left p.lead{color:var(--muted);font-size:17px;margin:0 0 18px;max-width:680px}
-    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
-    .btn.ghost{background:transparent;border:1px solid #e7ddd0;color:#333;padding:9px 14px}
-    /* Right column (cover + small bio) */
-    .hero-right{display:flex;flex-direction:column;gap:14px;align-items:center}
-    .cover-large{width:100%;max-width:320px;border-radius:12px;box-shadow:0 18px 38px rgba(14,14,14,0.12);overflow:hidden}
-    .cover-large img{width:100%;height:auto;display:block}
-    .mini-bio{background:var(--card);padding:12px;border-radius:12px;max-width:340px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.04)}
-    .mini-bio p{margin:0;color:#333;font-size:14px}
-    /* footer */
-    footer{margin-top:36px;padding-top:18px;border-top:1px solid rgba(0,0,0,0.04);display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
-    footer small{color:var(--muted)}
-    /* modal (subscribe) */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(6,6,6,0.45);display:none;align-items:center;justify-content:center;z-index:50}
-    .modal{background:#fff;padding:18px;border-radius:12px;max-width:520px;width:92%;box-shadow:0 18px 48px rgba(10,10,10,0.18)}
-    .modal h3{margin:0 0 10px;font-family:'Playfair Display',serif}
-    .modal form{display:flex;gap:10px;flex-wrap:wrap}
-    .modal input[type="email"]{flex:1;padding:10px 12px;border:1px solid #e6e0d6;border-radius:8px}
-    .modal button{padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;border:none}
-    /* tiny helpers */
-    .muted{color:var(--muted);font-size:14px}
-/* Full-bleed container: stretches to viewport edges while keeping normal page flow */
-.hero-banner {
-  position: relative;
-  width: 100vw;              /* full viewport width */
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;        /* center full-bleed inside page */
-  margin-right: -50vw;
-  overflow: hidden;
-  background: #f7f3ee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-/* Media wrapper keeps aspect ratio and responsiveness */
-.hero-media {
-  width: 100%;
-  height: min(80vh, 720px);  /* responsive height - never taller than 720px */
-  display: block;
-}
+    .hero-media {
+      width: 100%;
+      height: min(80vh, 720px);
+      display: block;
+    }
 
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         /* cover behavior keeps image fill without distortion */
-  object-position: center center;
-  display: block;
-}
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
 
-/* CTA centered on top of the image */
-.hero-cta {
-  position: absolute;
-  inset: auto 0 8% 0;        /* place CTA near bottom, centered horizontally */
-  display: flex;
-  justify-content: center;
-  z-index: 3;
-  pointer-events: none;      /* allow clicks only on the button */
-}
+    .hero-cta {
+      position: absolute;
+      inset: auto 0 8% 0;
+      display: flex;
+      justify-content: center;
+      z-index: 3;
+      pointer-events: none;
+    }
 
-.hero-cta .btn {
-  pointer-events: auto;      /* re-enable clicks on the button */
-  background: #b98b4a;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 8px 26px rgba(185,139,74,0.16);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
+    .hero-cta .btn {
+      pointer-events: auto;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 26px rgba(185, 139, 74, 0.16);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
 
-/* small hover lift */
-.hero-cta .btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 34px rgba(185,139,74,0.22);
-}
+    .hero-cta .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 34px rgba(185, 139, 74, 0.22);
+    }
 
-/* responsive adjustments */
-@media (max-width: 1024px) {
-  .hero-media { height: min(62vh, 640px); }
-  .hero-cta { inset: auto 0 7% 0; }
-  .hero-cta .btn { padding: 12px 22px; }
-}
+    /* Main Hero Content */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: center;
+      margin-top: 48px;
+    }
 
-@media (max-width: 640px) {
-  .hero-media { height: 56vh; }       /* shorter height on small phones */
-  .hero-cta { inset: auto 0 6% 0; }
-  .hero-cta .btn { padding: 10px 18px; font-size: 15px; border-radius: 8px; }
-}
+    .hero-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      line-height: 1.2;
+      margin: 0 0 16px;
+    }
 
-/* Optional: remove rounded corners if used previously on page wrapper */
-body > .wrap + .hero-banner { border-top-left-radius: 0; border-top-right-radius: 0; }
-</style>
+    .hero-left p.lead {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 24px;
+      max-width: 680px;
+      line-height: 1.7;
+    }
 
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .cover-large {
+      width: 100%;
+      max-width: 320px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .cover-large:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .cover-large img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .mini-bio {
+      background: var(--card);
+      padding: 16px;
+      border-radius: var(--radius);
+      max-width: 340px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .mini-bio p {
+      margin: 0;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-media {
+        height: min(62vh, 640px);
+      }
+
+      .hero-cta {
+        inset: auto 0 7% 0;
+      }
+
+      .hero-cta .btn {
+        padding: 12px 22px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .hero-left h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-media {
+        height: 56vh;
+      }
+
+      .hero-cta {
+        inset: auto 0 6% 0;
+      }
+
+      .hero-cta .btn {
+        padding: 10px 18px;
+        font-size: 15px;
+        border-radius: 8px;
+      }
+    }
+  </style>
 
 </head>
+
 <body>
   <div class="wrap">
-    <header>
-      <a href="/" class="brand" aria-label="Coach Tejaswi homepage">
+    <header class="page-header">
+      <a href="index.html" class="brand" aria-label="Coach Tejaswi homepage">
         <div class="logo">CT</div>
-
-        <div>
-          <h1>Coach Tejaswi</h1>
+        <div class="brand-text">
+          <span class="name">Coach Tejaswi</span>
           <div class="muted" style="font-size:12px;margin-top:2px">Writer • Coach • Storyteller</div>
         </div>
       </a>
 
       <nav aria-label="Primary">
-        <ul>
-          <li><a href="/books" class="">Books</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="#" id="subscribeBtn" class="primary">Subscribe</a></li>
+        <ul style="display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center">
+          <li><a href="books.html"
+              style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">Books</a></li>
+          <li><a href="about.html"
+              style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">About</a></li>
+          <li><a href="contact.html"
+              style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">Contact</a>
+          </li>
+          <li><a href="#" id="subscribeBtn"
+              style="background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(185,139,74,0.12);font-weight:600;padding:8px 14px;border-radius:8px;text-decoration:none">Subscribe</a>
+          </li>
         </ul>
       </nav>
     </header>
-<!-- HERO IMAGE BANNER START -->
-<section class="hero-banner" aria-label="Homepage hero">
-  <div class="hero-media" role="img" aria-label="Tejaswi Khanna and Embracing Failure book">
-    <img src="assets/images/coachtejaswi-heroimg.jpg" alt="Tejaswi Khanna and Embracing Failure cover">
   </div>
 
-  <div class="hero-cta">
-    <a href="/books.html" class="btn">Explore</a>
-  </div>
-</section>
+  <!-- HERO IMAGE BANNER -->
+  <section class="hero-banner" aria-label="Homepage hero" data-animate>
+    <div class="hero-media" role="img" aria-label="Tejaswi Khanna and Embracing Failure book">
+      <img src="assets/images/coachtejaswi-heroimg.jpg" alt="Tejaswi Khanna and Embracing Failure cover" loading="lazy">
+    </div>
 
-    <main class="hero" role="main">
+    <div class="hero-cta">
+      <a href="books.html" class="btn">Explore</a>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <main class="hero" role="main" data-animate>
       <div class="hero-left">
         <h2>Small daily reflections. Big quiet changes.</h2>
-        <p class="lead">Short essays, tiny practices and stories that help you meet failure with curiosity and wake up each day with calm. Author of <em>Embracing Failure</em> and upcoming <em>Awaken Each Day</em>.</p>
+        <p class="lead">Short essays, tiny practices and stories that help you meet failure with curiosity and wake up
+          each day with calm. Author of <em>Embracing Failure</em> and upcoming <em>Awaken Each Day</em>.</p>
 
         <div class="hero-ctas">
-          <a class="btn" href="/books">See the books</a>
-          <a class="btn ghost" href="/about">About me</a>
+          <a class="btn" href="books.html">See the books</a>
+          <a class="btn ghost" href="about.html">About me</a>
         </div>
 
-        <div style="margin-top:18px" class="muted">Latest: Kintsugi essay — shared on LinkedIn. <a href="/books" style="text-decoration:underline">Read more</a></div>
+        <div style="margin-top:18px" class="muted">Latest: Kintsugi essay — shared on LinkedIn. <a href="books.html"
+            style="text-decoration:underline">Read more</a></div>
       </div>
 
       <aside class="hero-right" aria-label="Featured book">
         <div class="cover-large">
-          <img src="assets/images/embracing-failure-cover.jpg" alt="Embracing Failure book cover">
+          <img src="assets/images/embracing-failure-cover.jpg" alt="Embracing Failure book cover" loading="lazy">
         </div>
 
         <div class="mini-bio">
-          <p><strong>Embracing Failure</strong> — a short book about how broken moments teach us to be whole. Available on Amazon, Flipkart and Notion Press.</p>
+          <p><strong>Embracing Failure</strong> — a short book about how broken moments teach us to be whole. Available
+            on Amazon, Flipkart and Notion Press.</p>
         </div>
       </aside>
     </main>
 
     <footer>
       <small>© <span id="year"></span> Tejaswi Khanna</small>
-      <div class="muted">Follow: <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank">LinkedIn</a> • <a href="https://instagram.com/coachtejaswi" target="_blank">Instagram</a></div>
+      <div class="muted">Follow: <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank">LinkedIn</a> • <a
+          href="https://instagram.com/coachtejaswi" target="_blank">Instagram</a></div>
     </footer>
   </div>
 
   <!-- Subscribe modal -->
   <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal" role="document">
-      <h3>Get launch updates</h3>
-      <p class="muted">Enter your email and I’ll notify you when <em>Awaken Each Day</em> is ready.</p>
-      <form id="subscribeForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <h3>Get Launch Updates</h3>
+      <p class="muted">Enter your email and I'll notify you when <em>Awaken Each Day</em> is ready.</p>
+      <form id="subscribeForm" action="https://formspree.io/f/your-form-id" method="POST" data-validate>
         <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Notify me</button>
+        <button type="submit" class="btn">Notify me</button>
       </form>
-      <div style="margin-top:10px;text-align:right"><button onclick="closeModal()" style="background:none;border:none;color:#666;cursor:pointer">Close</button></div>
+      <div style="margin-top:14px;text-align:right">
+        <button onclick="closeModal()"
+          style="background:none;border:none;color:#666;cursor:pointer;text-decoration:underline">Close</button>
+      </div>
     </div>
   </div>
 
-  <script>
-    // small interactions
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const modal = document.getElementById('modal');
-    const subscribeBtn = document.getElementById('subscribeBtn');
-    subscribeBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
-
-    function openModal(){
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden','false');
-    }
-    function closeModal(){
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-    }
-    // close when clicking outside
-    modal.addEventListener('click', function(e){
-      if(e.target === modal) closeModal();
-    });
-  </script>
+  <!-- Shared JavaScript -->
+  <script src="script.js"></script>
 </body>
+
 </html>

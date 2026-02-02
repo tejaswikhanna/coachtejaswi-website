@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Coach Tejaswi</title>
+  <meta name="description"
+    content="Learn more about Tejaswi Khanna — writer, coach, and storyteller. Discover the journey, philosophy, and approach behind the books and reflections." />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="About — Coach Tejaswi" />
+  <meta property="og:description" content="Learn more about Tejaswi Khanna — writer, coach, and storyteller." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://coachtejaswi.com/about" />
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* About Page Specific Styles */
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+      margin: 48px 0;
+    }
+
+    .about-content h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .about-content .subtitle {
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      color: #333;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+      background: var(--card);
+      padding: 48px 36px;
+      border-radius: var(--radius);
+      margin: 48px 0;
+      box-shadow: var(--shadow-md);
+    }
+
+    .philosophy-section h2 {
+      font-size: 32px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 36px;
+    }
+
+    .philosophy-card {
+      text-align: center;
+      padding: 24px;
+      background: var(--bg);
+      border-radius: 10px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .philosophy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .philosophy-card .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .philosophy-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .philosophy-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Journey Section */
+    .journey-section {
+      margin: 60px 0;
+    }
+
+    .journey-section h2 {
+      font-size: 32px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      padding: 24px;
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      margin-bottom: 24px;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .timeline-item:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-item h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .timeline-item p {
+      font-size: 15px;
+      color: #555;
+      margin: 0;
+    }
+
+    /* Connect Section */
+    .connect-section {
+      background: linear-gradient(135deg, #f1e6da, #f7f3ee);
+      padding: 48px 36px;
+      border-radius: var(--radius);
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .connect-section h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .connect-section p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--card);
+      border-radius: 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      color: var(--accent);
+    }
+
+    .social-link .icon {
+      font-size: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .about-image {
+        order: -1;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .about-content h1 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .philosophy-section,
+      .connect-section {
+        padding: 32px 20px;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo">CT</div>
+        <div class="brand-text">
+          <span class="name">Coach Tejaswi</span>
+          <span class="tagline">Writer • Coach • Storyteller</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="subscribeBtn" class="primary">Subscribe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-wrap" role="main">
+    <!-- Hero Section -->
+    <section class="about-hero" data-animate>
+      <div class="about-content">
+        <h1>About Tejaswi</h1>
+        <p class="subtitle">Writer • Coach • Storyteller</p>
+
+        <p>
+          Welcome. I'm Tejaswi Khanna — a writer who believes that our most broken moments often become our most
+          beautiful teachers.
+        </p>
+
+        <p>
+          Through my books, essays, and reflections, I explore the quiet spaces between failure and growth, between
+          falling apart and coming back together. My work draws from personal stories, ancient wisdom, and the simple
+          truth that we all carry cracks — and that those cracks are where the light gets in.
+        </p>
+
+        <p>
+          Whether you're navigating a difficult transition, seeking more presence in your daily life, or simply looking
+          for words that feel like a conversation with a friend — I hope you'll find something here that resonates.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="assets/images/coachtejaswi-heroimg.jpg" alt="Tejaswi Khanna">
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section" data-animate>
+      <h2>My Philosophy</h2>
+      <p style="text-align: center; color: var(--muted); max-width: 700px; margin: 0 auto;">
+        My approach is rooted in three core beliefs that guide everything I write and share.
+      </p>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="icon">🌱</div>
+          <h3>Growth Through Failure</h3>
+          <p>Failure isn't the opposite of success — it's the pathway to it. Every stumble carries a lesson, every
+            broken moment holds wisdom.</p>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="icon">🧘</div>
+          <h3>Presence Over Perfection</h3>
+          <p>True transformation happens not through grand gestures, but through small, conscious steps taken with
+            awareness and compassion.</p>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="icon">✨</div>
+          <h3>Kintsugi Spirit</h3>
+          <p>Like the Japanese art of repairing broken pottery with gold, our cracks and scars can become our most
+            beautiful features.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="journey-section" data-animate>
+      <h2>My Journey</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>The Beginning</h3>
+          <p>My journey into writing and coaching began with my own encounters with failure — moments when life didn't
+            go as planned, and I had to find new ways forward.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Embracing Failure</h3>
+          <p>My first book, <em>Embracing Failure</em>, emerged from years of reflection on how our broken moments shape
+            us. It's a collection of stories, practices, and gentle wisdom for anyone navigating difficult transitions.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Daily Reflections</h3>
+          <p>My upcoming book, <em>Awaken Each Day</em>, offers 365 daily reflections — a companion for presence, calm,
+            and mindful living.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Today</h3>
+          <p>I continue to write, reflect, and share — creating spaces for authentic conversation about failure, growth,
+            and the courage to keep showing up.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section class="connect-section" data-animate>
+      <h2>Let's Connect</h2>
+      <p>I'd love to hear from you. Connect with me on social media or reach out directly.</p>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank" rel="noopener" class="social-link">
+          <span class="icon">💼</span>
+          <span>LinkedIn</span>
+        </a>
+
+        <a href="https://instagram.com/coachtejaswi" target="_blank" rel="noopener" class="social-link">
+          <span class="icon">📸</span>
+          <span>Instagram</span>
+        </a>
+
+        <a href="contact.html" class="social-link">
+          <span class="icon">✉️</span>
+          <span>Get in Touch</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <small>© <span id="year"></span> Tejaswi Khanna</small>
+      <div class="muted">
+        <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank">LinkedIn</a> •
+        <a href="https://instagram.com/coachtejaswi" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subscribe Modal -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <h3>Get Launch Updates</h3>
+      <p class="muted">Enter your email and I'll notify you when <em>Awaken Each Day</em> is ready.</p>
+      <form id="subscribeForm" action="https://formspree.io/f/your-form-id" method="POST" data-validate>
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit" class="btn">Notify me</button>
+      </form>
+      <div style="margin-top:14px;text-align:right">
+        <button onclick="closeModal()"
+          style="background:none;border:none;color:#666;cursor:pointer;text-decoration:underline">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Coach Tejaswi</title>
+    <meta name="description"
+        content="Get in touch with Tejaswi Khanna. Send a message, subscribe to updates, or connect on social media." />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Contact — Coach Tejaswi" />
+    <meta property="og:description" content="Get in touch with Tejaswi Khanna." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://coachtejaswi.com/contact" />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-container {
+            max-width: 900px;
+            margin: 48px auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .contact-header h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .contact-header p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+            margin-bottom: 48px;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+            background: var(--card);
+            padding: 36px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-form-section h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(185, 139, 74, 0.1);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .form-submit:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Contact Info */
+        .contact-info-section {
+            background: linear-gradient(135deg, #f1e6da, #f7f3ee);
+            padding: 36px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-info-section h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: var(--card);
+            border-radius: 10px;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-item h3 {
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-item p {
+            margin: 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .info-item a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .info-item a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Social Links Section */
+        .social-section {
+            background: var(--card);
+            padding: 36px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .social-section h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .social-section p {
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #f1e6da, #f7f3ee);
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .social-btn .icon {
+            font-size: 22px;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-header h1 {
+                font-size: 32px;
+            }
+
+            .contact-form-section,
+            .contact-info-section,
+            .social-section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="logo">CT</div>
+                <div class="brand-text">
+                    <span class="name">Coach Tejaswi</span>
+                    <span class="tagline">Writer • Coach • Storyteller</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="#" id="subscribeBtn" class="primary">Subscribe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-wrap" role="main">
+        <div class="contact-container">
+            <!-- Header -->
+            <div class="contact-header" data-animate>
+                <h1>Get in Touch</h1>
+                <p>Have a question? Want to share your thoughts? I'd love to hear from you.</p>
+            </div>
+
+            <!-- Contact Grid -->
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-section" data-animate>
+                    <h2>Send a Message</h2>
+
+                    <div id="successMessage" class="success-message">
+                        Thank you for your message! I'll get back to you soon.
+                    </div>
+
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" data-validate>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Write your message here..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section" data-animate>
+                    <h2>Other Ways to Connect</h2>
+
+                    <div class="info-item">
+                        <h3>
+                            <span>📧</span>
+                            Email
+                        </h3>
+                        <p>Prefer email? Reach out directly at:<br>
+                            <a href="mailto:contact@coachtejaswi.com">contact@coachtejaswi.com</a>
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>
+                            <span>📬</span>
+                            Newsletter
+                        </h3>
+                        <p>Subscribe to receive updates about new books, essays, and reflections.</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>
+                            <span>💼</span>
+                            Coaching
+                        </h3>
+                        <p>Interested in coaching or workshops? Let's start a conversation about how we can work
+                            together.</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>
+                            <span>⏱️</span>
+                            Response Time
+                        </h3>
+                        <p>I typically respond within 2-3 business days. Thank you for your patience!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Section -->
+            <div class="social-section" data-animate>
+                <h2>Connect on Social Media</h2>
+                <p>Follow along for daily reflections, book updates, and thoughtful conversations.</p>
+
+                <div class="social-buttons">
+                    <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank" rel="noopener"
+                        class="social-btn">
+                        <span class="icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="https://instagram.com/coachtejaswi" target="_blank" rel="noopener" class="social-btn">
+                        <span class="icon">📸</span>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrap">
+            <small>© <span id="year"></span> Tejaswi Khanna</small>
+            <div class="muted">
+                <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank">LinkedIn</a> •
+                <a href="https://instagram.com/coachtejaswi" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Subscribe Modal -->
+    <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal" role="document">
+            <h3>Get Launch Updates</h3>
+            <p class="muted">Enter your email and I'll notify you when <em>Awaken Each Day</em> is ready.</p>
+            <form id="subscribeForm" action="https://formspree.io/f/your-form-id" method="POST" data-validate>
+                <input type="email" name="email" placeholder="Your email" required>
+                <button type="submit" class="btn">Notify me</button>
+            </form>
+            <div style="margin-top:14px;text-align:right">
+                <button onclick="closeModal()"
+                    style="background:none;border:none;color:#666;cursor:pointer;text-decoration:underline">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shared JavaScript -->
+    <script src="script.js"></script>
+
+    <script>
+        // Handle form submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                // If using Formspree, it will handle the submission
+                // Show success message after a delay (simulated for now)
+                setTimeout(() => {
+                    successMessage.classList.add('active');
+                    contactForm.reset();
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('active');
+                    }, 5000);
+                }, 500);
+            });
+        }
+    </script>
+</body>
+
+</html>
