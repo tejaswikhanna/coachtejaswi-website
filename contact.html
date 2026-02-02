@@ -406,27 +406,60 @@
         </div>
     </div>
 
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
     <!-- Shared JavaScript -->
     <script src="script.js"></script>
 
     <script>
-        // Handle form submission
+        // Handle contact form submission with Supabase
         const contactForm = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
 
         if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
-                // If using Formspree, it will handle the submission
-                // Show success message after a delay (simulated for now)
-                setTimeout(() => {
-                    successMessage.classList.add('active');
-                    contactForm.reset();
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault(); // Prevent default form submission
 
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.classList.remove('active');
-                    }, 5000);
-                }, 500);
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Disable submit button and show loading state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                try {
+                    // Save to Supabase
+                    const result = await saveContactSubmission(formData);
+
+                    if (result.error) {
+                        // Show error
+                        showError('Failed to send message. Please try again.', contactForm.parentElement);
+                    } else {
+                        // Show success message
+                        successMessage.classList.add('active');
+                        contactForm.reset();
+
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.classList.remove('active');
+                        }, 5000);
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    showError('An error occurred. Please try again.', contactForm.parentElement);
+                } finally {
+                    // Re-enable submit button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
             });
         }
     </script>

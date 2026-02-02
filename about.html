@@ -410,8 +410,47 @@
     </div>
   </div>
 
+  <!-- Supabase Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+
   <!-- Shared JavaScript -->
   <script src="script.js"></script>
+
+  <script>
+    // Handle newsletter subscription
+    const subscribeForm = document.getElementById('subscribeForm');
+    if (subscribeForm) {
+      subscribeForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const emailInput = subscribeForm.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        const submitBtn = subscribeForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.disabled = true;
+        try {
+          const result = await saveNewsletterSubscriber(email);
+          if (result.error) {
+            if (result.error.includes('already subscribed')) {
+              showSuccess('You\'re already subscribed!', document.querySelector('.modal'));
+            } else {
+              showError('Failed to subscribe. Please try again.', document.querySelector('.modal'));
+            }
+          } else {
+            showSuccess('Thank you for subscribing!', document.querySelector('.modal'));
+            subscribeForm.reset();
+            setTimeout(() => closeModal(), 2000);
+          }
+        } catch (error) {
+          showError('An error occurred. Please try again.', document.querySelector('.modal'));
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>
