@@ -29,7 +29,8 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -55,7 +56,12 @@ img {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Playfair Display', serif;
   line-height: 1.2;
   margin: 0;
@@ -197,8 +203,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-nav a.primary {
   background: var(--accent);
-  color: #fff;
-  box-shadow: 0 6px 16px rgba(185, 139, 74, 0.12);
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(185, 139, 74, 0.2);
+  margin-left: 8px;
 }
 
 .main-nav a.primary::after {
@@ -384,6 +393,7 @@ footer a:hover {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -394,6 +404,7 @@ footer a:hover {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -405,6 +416,7 @@ footer a:hover {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
