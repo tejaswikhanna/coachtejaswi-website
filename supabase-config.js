@@ -3,8 +3,8 @@
 // ====================================
 
 // IMPORTANT: Replace these with your actual Supabase credentials
-const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // e.g., 'https://xxxxx.supabase.co'
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://xgomyipdyiyxmklmzinp.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhnb215aXBkeWl5eG1rbG16aW5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAwMTA4OTIsImV4cCI6MjA4NTU4Njg5Mn0.TjK2GM5-5Awxpipx0lICJjQNXu21BKXycN_HKs6wGIo';
 
 // Initialize Supabase client
 let supabaseClient = null;
@@ -45,7 +45,7 @@ async function saveContactSubmission(formData) {
                     created_at: new Date().toISOString()
                 }
             ])
-            .select();
+            ;
 
         if (error) {
             console.error('Error saving contact submission:', error);
@@ -81,7 +81,7 @@ async function saveNewsletterSubscriber(email) {
                     status: 'active'
                 }
             ])
-            .select();
+            ;
 
         if (error) {
             // Check if it's a duplicate email error
@@ -200,9 +200,92 @@ function showError(message, container) {
     }, 5000);
 }
 
-// Initialize Supabase when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSupabase);
-} else {
-    initSupabase();
+// ====================================
+// Auto-initialize Form Listeners
+// ====================================
+
+function initSupabaseForms() {
+    if (!initSupabase()) return;
+
+    // Handle Contact Forms
+    document.querySelectorAll('form[data-supabase-contact]').forEach(form => {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            const successMsg = document.getElementById('successMessage') || form.querySelector('.success-message');
+
+            const formData = {
+                name: form.querySelector('[name="name"]')?.value || form.querySelector('#name')?.value,
+                email: form.querySelector('[name="email"]')?.value || form.querySelector('#email')?.value,
+                message: form.querySelector('[name="message"]')?.value || form.querySelector('#message')?.value
+            };
+
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const result = await saveContactSubmission(formData);
+                if (result.error) {
+                    showError('Failed to send message: ' + result.error, form.parentElement);
+                } else {
+                    if (successMsg) successMsg.classList.add('active');
+                    form.reset();
+                    showSuccess('Message sent successfully!', form.parentElement);
+                    setTimeout(() => { if (successMsg) successMsg.classList.remove('active'); }, 5000);
+                }
+            } catch (err) {
+                showError('An error occurred. Please try again.', form.parentElement);
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    });
+
+    // Handle Newsletter Forms
+    document.querySelectorAll('form[data-supabase-newsletter]').forEach(form => {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const emailInput = form.querySelector('input[type="email"]');
+            const email = emailInput.value;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            submitBtn.textContent = 'Subscribing...';
+            submitBtn.disabled = true;
+
+            try {
+                const result = await saveNewsletterSubscriber(email);
+                if (result.error) {
+                    if (result.error.includes('already subscribed')) {
+                        showSuccess('You\'re already subscribed! Thank you.', form.parentElement);
+                    } else {
+                        showError('Subscription failed: ' + result.error, form.parentElement);
+                    }
+                } else {
+                    showSuccess('Thank you for subscribing!', form.parentElement);
+                    form.reset();
+                    if (typeof closeModal === 'function') {
+                        setTimeout(() => closeModal(), 2000);
+                    }
+                }
+            } catch (err) {
+                showError('An error occurred. Please try again.', form.parentElement);
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    });
 }
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSupabaseForms);
+} else {
+    initSupabaseForms();
+}
+

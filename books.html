@@ -467,7 +467,7 @@
     <div class="modal" role="document">
       <h3>Get Launch Updates</h3>
       <p class="muted">Enter your email and I'll notify you when <em>Awaken Each Day</em> is ready.</p>
-      <form id="subscribeForm" action="https://formspree.io/f/your-form-id" method="POST" data-validate>
+      <form id="subscribeForm" action="#" method="POST" data-supabase-newsletter data-validate>
         <input type="email" name="email" placeholder="Your email" required>
         <button type="submit" class="btn">Notify me</button>
       </form>
@@ -485,40 +485,7 @@
   <!-- Shared JavaScript -->
   <script src="script.js"></script>
 
-  <script>
-    // Handle newsletter subscription
-    const subscribeForm = document.getElementById('subscribeForm');
-    if (subscribeForm) {
-      subscribeForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const emailInput = subscribeForm.querySelector('input[type="email"]');
-        const email = emailInput.value;
-        const submitBtn = subscribeForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Subscribing...';
-        submitBtn.disabled = true;
-        try {
-          const result = await saveNewsletterSubscriber(email);
-          if (result.error) {
-            if (result.error.includes('already subscribed')) {
-              showSuccess('You\'re already subscribed!', document.querySelector('.modal'));
-            } else {
-              showError('Failed to subscribe. Please try again.', document.querySelector('.modal'));
-            }
-          } else {
-            showSuccess('Thank you for subscribing!', document.querySelector('.modal'));
-            subscribeForm.reset();
-            setTimeout(() => closeModal(), 2000);
-          }
-        } catch (error) {
-          showError('An error occurred. Please try again.', document.querySelector('.modal'));
-        } finally {
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }
-      });
-    }
-  </script>
+
 </body>
 
 </html>
