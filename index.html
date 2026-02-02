@@ -249,9 +249,7 @@
           <li><a href="contact.html"
               style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">Contact</a>
           </li>
-          <li><a href="#" id="subscribeBtn"
-              style="background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(185,139,74,0.12);font-weight:600;padding:8px 14px;border-radius:8px;text-decoration:none">Subscribe</a>
-          </li>
+          <li><a href="#" id="subscribeBtn" class="primary">Stay Inspired</a></li>
         </ul>
       </nav>
     </header>
@@ -275,8 +273,8 @@
         <p class="lead">Short essays, tiny practices and stories that help you meet failure with curiosity and wake up
           each day with calm. Author of <em>Embracing Failure</em> and upcoming <em>Awaken Each Day</em>.</p>
 
-        <div class="hero-ctas">
-          <a class="btn" href="books.html">See the books</a>
+        <div class="hero-actions" data-animate>
+          <a class="btn primary" href="#" onclick="openModal(); return false;">Stay Inspired</a>
           <a class="btn ghost" href="about.html">About me</a>
         </div>
 
@@ -306,11 +304,16 @@
   <!-- Subscribe modal -->
   <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal" role="document">
-      <h3>Get Launch Updates</h3>
-      <p class="muted">Enter your email and I'll notify you when <em>Awaken Each Day</em> is ready.</p>
+      <h3>Join the Journey</h3>
+      <p class="muted">Get weekly reflections on growth, failure and becoming a better version of yourself.</p>
       <form id="subscribeForm" action="#" method="POST" data-supabase-newsletter data-validate>
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit" class="btn">Notify me</button>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <input type="text" name="name" placeholder="Your name" required style="width: 100%; margin-bottom: 0;">
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+          <input type="email" name="email" placeholder="Your email" required style="width: 100%; margin-bottom: 0;">
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">I'm In</button>
       </form>
       <div style="margin-top:14px;text-align:right">
         <button onclick="closeModal()"

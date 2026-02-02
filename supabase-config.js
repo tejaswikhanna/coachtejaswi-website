@@ -63,9 +63,10 @@ async function saveContactSubmission(formData) {
 /**
  * Save newsletter subscriber to Supabase
  * @param {string} email - Subscriber email
+ * @param {string} name - Subscriber name
  * @returns {Promise} - Supabase response
  */
-async function saveNewsletterSubscriber(email) {
+async function saveNewsletterSubscriber(email, name = '') {
     if (!supabaseClient) {
         console.error('Supabase not initialized');
         return { error: 'Database not configured' };
@@ -77,11 +78,12 @@ async function saveNewsletterSubscriber(email) {
             .insert([
                 {
                     email: email,
+                    name: name,
                     subscribed_at: new Date().toISOString(),
                     status: 'active'
                 }
-            ])
-            ;
+            ]);
+        ;
 
         if (error) {
             // Check if it's a duplicate email error
@@ -249,7 +251,9 @@ function initSupabaseForms() {
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
+            const nameInput = form.querySelector('[name="name"]') || form.querySelector('#newsletterName');
             const emailInput = form.querySelector('input[type="email"]');
+            const name = nameInput ? nameInput.value : '';
             const email = emailInput.value;
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
@@ -258,7 +262,7 @@ function initSupabaseForms() {
             submitBtn.disabled = true;
 
             try {
-                const result = await saveNewsletterSubscriber(email);
+                const result = await saveNewsletterSubscriber(email, name);
                 if (result.error) {
                     if (result.error.includes('already subscribed')) {
                         showSuccess('You\'re already subscribed! Thank you.', form.parentElement);

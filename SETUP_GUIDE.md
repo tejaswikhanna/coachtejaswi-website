@@ -21,9 +21,10 @@ CREATE TABLE contact_submissions (
 );
 
 -- Create newsletter_subscribers table
-CREATE TABLE newsletter_subscribers (
+CREATE TABLE IF NOT EXISTS newsletter_subscribers (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   email TEXT UNIQUE NOT NULL,
+  name TEXT,
   subscribed_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   status TEXT DEFAULT 'active'
 );

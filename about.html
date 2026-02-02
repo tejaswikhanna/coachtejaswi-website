@@ -261,7 +261,7 @@
           <li><a href="books.html">Books</a></li>
           <li><a href="about.html" class="active">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="#" id="subscribeBtn" class="primary">Subscribe</a></li>
+          <li><a href="#" id="subscribeBtn" class="primary">Stay Inspired</a></li>
         </ul>
       </nav>
     </div>
@@ -397,11 +397,16 @@
   <!-- Subscribe Modal -->
   <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal" role="document">
-      <h3>Get Launch Updates</h3>
-      <p class="muted">Enter your email and I'll notify you when <em>Awaken Each Day</em> is ready.</p>
+      <h3>Join the Journey</h3>
+      <p class="muted">Get weekly reflections on growth, failure and becoming a better version of yourself.</p>
       <form id="subscribeForm" action="#" method="POST" data-supabase-newsletter data-validate>
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit" class="btn">Notify me</button>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <input type="text" name="name" placeholder="Your name" required style="width: 100%; margin-bottom: 0;">
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+          <input type="email" name="email" placeholder="Your email" required style="width: 100%; margin-bottom: 0;">
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">I'm In</button>
       </form>
       <div style="margin-top:14px;text-align:right">
         <button onclick="closeModal()"
