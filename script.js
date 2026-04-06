@@ -227,6 +227,30 @@ function toggleBuyMenu() {
 // Make toggleBuyMenu available globally
 window.toggleBuyMenu = toggleBuyMenu;
 
+// ===== DROPDOWN MENU for Unleash the Achiever Within =====
+function toggleBuyMenuUA() {
+  const menu = document.getElementById('buyMenuUA');
+  if (!menu) return;
+  
+  const isVisible = menu.style.display === 'block';
+  menu.style.display = isVisible ? 'none' : 'block';
+  
+  if (!isVisible) {
+    // Close when clicking outside
+    setTimeout(() => {
+      document.addEventListener('click', function handler(e) {
+        if (!menu.contains(e.target) && !e.target.closest('.dropdown button')) {
+          menu.style.display = 'none';
+          document.removeEventListener('click', handler);
+        }
+      });
+    }, 10);
+  }
+}
+
+// Make toggleBuyMenuUA available globally
+window.toggleBuyMenuUA = toggleBuyMenuUA;
+
 // ===== SMOOTH ANCHOR SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
