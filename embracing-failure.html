@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Embracing Failure | Tejaswi Khanna</title>
   <meta name="description" content="Discover Embracing Failure by Tejaswi Khanna — a powerful exploration of growth, resilience, confidence, and transformation through failure." />
-  <meta name="keywords" content="embracing failure, overcoming failure, fear of failure, resilience, mindset growth, Tejaswi Khanna, personal growth book" />
+  <meta name="keywords" content="embracing failure, overcoming failure, fear of failure, resilience, mindset growth, Tejaswi Khanna" />
   <link rel="canonical" href="https://coachtejaswi.com/embracing-failure" />
 
   <meta property="og:title" content="Embracing Failure | Tejaswi Khanna" />
@@ -13,7 +13,184 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coachtejaswi.com/embracing-failure" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #f4f4f4;
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15,15,15,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    nav a {
+      color: #f4f4f4;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom, #111, #1a1a1a);
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      max-width: 900px;
+      margin-bottom: 25px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 1.2rem;
+      color: #d0d0d0;
+      margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #111;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 35px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #d0d0d0;
+      margin-bottom: 18px;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: #d0d0d0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .quote-box {
+      border-left: 3px solid #ffffff;
+      padding-left: 25px;
+      margin-top: 30px;
+      font-size: 1.4rem;
+      color: #ffffff;
+      font-style: italic;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #181818;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -25,11 +202,7 @@
       "name": "Tejaswi Khanna"
     },
     "url": "https://coachtejaswi.com/embracing-failure",
-    "description": "A reflective and empowering book about resilience, mindset, and personal growth through failure.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Coach Tejaswi"
-    }
+    "description": "A reflective and empowering book about resilience, mindset, and personal growth through failure."
   }
   </script>
 </head>
@@ -43,107 +216,113 @@
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>Embracing Failure</h1>
+    <p>
+      Failure is not the opposite of success — it is the path that shapes it.
+    </p>
+    <p>
+      A deeply reflective exploration of growth, resilience, self-awareness, and transformation by Tejaswi Khanna.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="books.html" class="btn btn-primary">Explore the Book</a>
+      <a href="contact.html" class="btn btn-secondary">Connect</a>
+    </div>
+  </section>
+
   <main class="container">
-    <section class="hero">
-      <h1>Embracing Failure</h1>
+
+    <section class="section">
+      <h2>Why Embracing Failure Matters</h2>
       <p>
-        Failure is not the opposite of growth — it is the path to it.
+        Most people spend their lives trying to avoid failure. But avoiding failure often means avoiding growth,
+        courage, creativity, and transformation.
       </p>
+
       <p>
-        In <strong>Embracing Failure</strong>, Tejaswi Khanna explores how setbacks, uncertainty,
-        rejection, and discomfort can become the foundation for confidence, resilience,
-        and transformation.
+        Embracing Failure challenges the idea that setbacks define us. Instead, it reveals how failure can become
+        the foundation for resilience, confidence, emotional intelligence, and authentic growth.
       </p>
+
+      <div class="quote-box">
+        “Failure rarely destroys us. More often, it reveals us.”
+      </div>
     </section>
 
-    <section>
-      <h2>Why This Book Matters</h2>
-      <p>
-        Most people spend their lives trying to avoid failure. But avoiding failure often
-        means avoiding growth, creativity, courage, and authenticity.
-      </p>
-
-      <p>
-        This book is designed to help readers:
-      </p>
-
-      <ul>
-        <li>Overcome fear of failure</li>
-        <li>Develop emotional resilience</li>
-        <li>Build confidence after setbacks</li>
-        <li>Understand the psychology of growth</li>
-        <li>Transform self-doubt into self-awareness</li>
-      </ul>
-    </section>
-
-    <section>
+    <section class="section">
       <h2>Core Themes</h2>
 
-      <h3>Growth Through Failure</h3>
-      <p>
-        Every meaningful transformation begins with discomfort. Failure often reveals
-        the lessons success hides.
-      </p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Growth Through Discomfort</h3>
+          <p>
+            Every meaningful transformation begins where comfort ends.
+          </p>
+        </div>
 
-      <h3>Resilience and Inner Strength</h3>
-      <p>
-        True resilience is not about never falling — it is about learning how to rise
-        differently each time.
-      </p>
+        <div class="card">
+          <h3>Emotional Resilience</h3>
+          <p>
+            Learn how setbacks can strengthen clarity, confidence, and emotional balance.
+          </p>
+        </div>
 
-      <h3>Self Awareness</h3>
-      <p>
-        Failure strips away illusion and forces us to confront who we really are.
-      </p>
+        <div class="card">
+          <h3>Self Awareness</h3>
+          <p>
+            Failure strips away illusion and helps us confront our deeper truths.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Who Should Read This?</h2>
+    <section class="section">
+      <h2>Who This Book Is For</h2>
+
       <ul>
         <li>People struggling with self-doubt</li>
-        <li>Entrepreneurs and creators</li>
-        <li>Students facing uncertainty</li>
-        <li>Professionals navigating setbacks</li>
-        <li>Anyone seeking personal growth</li>
+        <li>Creators and entrepreneurs facing uncertainty</li>
+        <li>Students navigating pressure and expectations</li>
+        <li>Professionals rebuilding after setbacks</li>
+        <li>Anyone seeking deeper personal growth</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Reader Reflection</h2>
-      <blockquote>
-        “Failure is rarely the end. More often, it is the beginning of clarity.”
-      </blockquote>
-    </section>
-
-    <section>
+    <section class="section">
       <h2>Frequently Asked Questions</h2>
 
       <h3>What is Embracing Failure about?</h3>
       <p>
-        The book explores how failure can become a catalyst for emotional growth,
-        resilience, and self-awareness.
+        It is a reflective and empowering book about learning from setbacks, overcoming fear, and transforming failure into growth.
       </p>
 
-      <h3>Who is this book for?</h3>
+      <h3>Who should read this book?</h3>
       <p>
-        Anyone navigating uncertainty, self-doubt, personal transformation,
-        or emotional growth.
+        Anyone navigating uncertainty, emotional growth, self-doubt, or personal transformation.
       </p>
 
-      <h3>Why is failure important for growth?</h3>
+      <h3>Why is failure important?</h3>
       <p>
-        Failure teaches perspective, adaptability, emotional resilience,
-        and authenticity.
+        Failure develops resilience, perspective, emotional intelligence, and long-term growth.
       </p>
     </section>
 
-    <section>
-      <h2>Explore More</h2>
+    <section class="section">
+      <h2>Explore Quietwork</h2>
       <p>
-        Discover reflective insights and thematic quote collections through
-        <a href="index.html">Quietwork</a>.
+        Continue exploring reflective insights, emotional clarity, and thematic quotes through Quietwork.
       </p>
+
+      <div class="cta-buttons">
+        <a href="index.html" class="btn btn-primary">Explore Quietwork</a>
+      </div>
     </section>
+
   </main>
+
+  <footer>
+    <p>© Tejaswi Khanna — Embracing Failure</p>
+  </footer>
 </body>
 </html>
