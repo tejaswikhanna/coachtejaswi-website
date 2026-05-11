@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Embracing Failure | Tejaswi Khanna</title>
-  <meta name="description" content="Discover Embracing Failure by Tejaswi Khanna — a powerful exploration of growth, resilience, confidence, and transformation through failure." />
-  <meta name="keywords" content="embracing failure, overcoming failure, fear of failure, resilience, mindset growth, Tejaswi Khanna" />
+  <meta name="description" content="Discover Embracing Failure by Tejaswi Khanna — a reflective exploration of growth, resilience, and transformation through failure." />
+  <meta name="keywords" content="embracing failure, overcoming failure, fear of failure, resilience, growth mindset, Tejaswi Khanna" />
+
   <link rel="canonical" href="https://coachtejaswi.com/embracing-failure" />
 
   <meta property="og:title" content="Embracing Failure | Tejaswi Khanna" />
-  <meta property="og:description" content="A transformative book on growth, resilience, and learning through failure." />
+  <meta property="og:description" content="Lessons from cracks, collapses & comebacks." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coachtejaswi.com/embracing-failure" />
 
@@ -21,18 +22,18 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #f4f4f4;
-      line-height: 1.7;
+      font-family: Georgia, serif;
+      background: #ece6d8;
+      color: #1d1d1d;
+      line-height: 1.75;
     }
 
     header {
       position: sticky;
       top: 0;
-      background: rgba(15,15,15,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(236, 230, 216, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       z-index: 100;
     }
 
@@ -41,71 +42,76 @@
       margin: auto;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 20px;
+      gap: 35px;
+      padding: 22px 20px;
     }
 
     nav a {
-      color: #f4f4f4;
       text-decoration: none;
+      color: #1d1d1d;
       font-size: 0.95rem;
       letter-spacing: 0.5px;
-      transition: opacity 0.3s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
     }
 
     .hero {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 20px 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 60px;
       align-items: center;
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(to bottom, #111, #1a1a1a);
     }
 
-    .hero h1 {
-      font-size: 4rem;
-      max-width: 900px;
-      margin-bottom: 25px;
-      line-height: 1.1;
+    .hero-content h1 {
+      font-size: 5rem;
+      line-height: 0.95;
+      margin-bottom: 30px;
+      font-weight: normal;
     }
 
-    .hero p {
-      max-width: 760px;
-      font-size: 1.2rem;
-      color: #d0d0d0;
-      margin-bottom: 20px;
+    .hero-content p {
+      font-size: 1.15rem;
+      max-width: 600px;
+      color: #333;
+      margin-bottom: 22px;
+    }
+
+    .book-cover {
+      display: flex;
+      justify-content: center;
+    }
+
+    .book-cover img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 6px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
     }
 
     .cta-buttons {
-      margin-top: 30px;
       display: flex;
-      gap: 20px;
+      gap: 18px;
+      margin-top: 30px;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     .btn {
       padding: 14px 28px;
-      border-radius: 40px;
       text-decoration: none;
-      font-weight: bold;
-      transition: transform 0.3s ease;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
     }
 
     .btn-primary {
-      background: #ffffff;
-      color: #111;
+      background: #1d1d1d;
+      color: #ece6d8;
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
+      border: 1px solid rgba(0,0,0,0.15);
+      color: #1d1d1d;
     }
 
     .btn:hover {
@@ -113,81 +119,81 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 950px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 20px 20px 100px;
     }
 
     .section {
-      margin-bottom: 80px;
+      margin-top: 100px;
     }
 
     h2 {
-      font-size: 2.2rem;
-      margin-bottom: 25px;
+      font-size: 2.5rem;
+      margin-bottom: 28px;
+      font-weight: normal;
     }
 
     h3 {
-      font-size: 1.4rem;
-      margin-top: 35px;
-      margin-bottom: 15px;
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      font-weight: normal;
     }
 
     p {
-      color: #d0d0d0;
       margin-bottom: 18px;
+      color: #2d2d2d;
+    }
+
+    .quote-box {
+      margin-top: 40px;
+      padding-left: 28px;
+      border-left: 2px solid rgba(0,0,0,0.2);
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #111;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.35);
+      padding: 32px;
+      border-radius: 24px;
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
     ul {
       padding-left: 20px;
-      color: #d0d0d0;
     }
 
     li {
       margin-bottom: 12px;
     }
 
-    .quote-box {
-      border-left: 3px solid #ffffff;
-      padding-left: 25px;
-      margin-top: 30px;
-      font-size: 1.4rem;
-      color: #ffffff;
-      font-style: italic;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: #181818;
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 30px;
-      border-radius: 20px;
-    }
-
     footer {
       text-align: center;
-      padding: 50px 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #888;
+      padding: 60px 20px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      color: #555;
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.8rem;
+      .hero {
+        padding-top: 60px;
       }
 
-      .hero p {
-        font-size: 1rem;
+      .hero-content h1 {
+        font-size: 3.5rem;
       }
 
       h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
     }
   </style>
@@ -202,47 +208,61 @@
       "name": "Tejaswi Khanna"
     },
     "url": "https://coachtejaswi.com/embracing-failure",
-    "description": "A reflective and empowering book about resilience, mindset, and personal growth through failure."
+    "description": "Lessons from cracks, collapses & comebacks."
   }
   </script>
 </head>
 <body>
+
   <header>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="books.html">Books</a>
-      <a href="contact.html">Contact</a>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/books">Books</a>
+      <a href="/contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Embracing Failure</h1>
-    <p>
-      Failure is not the opposite of success — it is the path that shapes it.
-    </p>
-    <p>
-      A deeply reflective exploration of growth, resilience, self-awareness, and transformation by Tejaswi Khanna.
-    </p>
 
-    <div class="cta-buttons">
-      <a href="books.html" class="btn btn-primary">Explore the Book</a>
-      <a href="contact.html" class="btn btn-secondary">Connect</a>
+    <div class="hero-content">
+      <h1>Embracing Failure</h1>
+
+      <p>
+        Lessons from cracks, collapses & comebacks.
+      </p>
+
+      <p>
+        A reflective exploration of growth, resilience, emotional recovery,
+        and the hidden wisdom inside failure.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="/books" class="btn btn-primary">Explore the Book</a>
+        <a href="/contact" class="btn btn-secondary">Connect</a>
+      </div>
     </div>
+
+    <div class="book-cover">
+      <img src="assets/images/embracing-failure-cover.jpg" alt="Embracing Failure book cover by Tejaswi Khanna" />
+    </div>
+
   </section>
 
   <main class="container">
 
     <section class="section">
-      <h2>Why Embracing Failure Matters</h2>
+      <h2>Why Failure Changes Us</h2>
+
       <p>
-        Most people spend their lives trying to avoid failure. But avoiding failure often means avoiding growth,
-        courage, creativity, and transformation.
+        Most people fear failure because they believe it defines their worth.
+        But failure often becomes the very thing that reveals resilience,
+        clarity, courage, and authenticity.
       </p>
 
       <p>
-        Embracing Failure challenges the idea that setbacks define us. Instead, it reveals how failure can become
-        the foundation for resilience, confidence, emotional intelligence, and authentic growth.
+        Embracing Failure explores how setbacks, uncertainty, rejection,
+        and collapse can become powerful turning points in personal growth.
       </p>
 
       <div class="quote-box">
@@ -254,26 +274,28 @@
       <h2>Core Themes</h2>
 
       <div class="card-grid">
+
         <div class="card">
           <h3>Growth Through Discomfort</h3>
           <p>
-            Every meaningful transformation begins where comfort ends.
+            Transformation begins where comfort ends.
           </p>
         </div>
 
         <div class="card">
-          <h3>Emotional Resilience</h3>
+          <h3>Resilience</h3>
           <p>
-            Learn how setbacks can strengthen clarity, confidence, and emotional balance.
+            Setbacks can become the foundation for deeper strength.
           </p>
         </div>
 
         <div class="card">
           <h3>Self Awareness</h3>
           <p>
-            Failure strips away illusion and helps us confront our deeper truths.
+            Failure removes illusion and forces honesty with ourselves.
           </p>
         </div>
+
       </div>
     </section>
 
@@ -281,11 +303,10 @@
       <h2>Who This Book Is For</h2>
 
       <ul>
-        <li>People struggling with self-doubt</li>
-        <li>Creators and entrepreneurs facing uncertainty</li>
-        <li>Students navigating pressure and expectations</li>
-        <li>Professionals rebuilding after setbacks</li>
-        <li>Anyone seeking deeper personal growth</li>
+        <li>People rebuilding after setbacks</li>
+        <li>Creators and entrepreneurs navigating uncertainty</li>
+        <li>Anyone struggling with self doubt or fear of failure</li>
+        <li>Readers seeking emotional clarity and personal growth</li>
       </ul>
     </section>
 
@@ -294,29 +315,19 @@
 
       <h3>What is Embracing Failure about?</h3>
       <p>
-        It is a reflective and empowering book about learning from setbacks, overcoming fear, and transforming failure into growth.
+        It explores how failure can become a catalyst for resilience,
+        growth, and emotional transformation.
       </p>
 
       <h3>Who should read this book?</h3>
       <p>
-        Anyone navigating uncertainty, emotional growth, self-doubt, or personal transformation.
+        Anyone navigating uncertainty, emotional recovery, or personal growth.
       </p>
 
       <h3>Why is failure important?</h3>
       <p>
-        Failure develops resilience, perspective, emotional intelligence, and long-term growth.
+        Failure teaches perspective, adaptability, humility, and resilience.
       </p>
-    </section>
-
-    <section class="section">
-      <h2>Explore Quietwork</h2>
-      <p>
-        Continue exploring reflective insights, emotional clarity, and thematic quotes through Quietwork.
-      </p>
-
-      <div class="cta-buttons">
-        <a href="index.html" class="btn btn-primary">Explore Quietwork</a>
-      </div>
     </section>
 
   </main>
@@ -324,5 +335,6 @@
   <footer>
     <p>© Tejaswi Khanna — Embracing Failure</p>
   </footer>
+
 </body>
 </html>
