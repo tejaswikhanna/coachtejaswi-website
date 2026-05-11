@@ -1,377 +1,338 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Coach Tejaswi — Author & Coach</title>
-  <meta name="description"
-    content="Tejaswi Khanna — writer, coach. Books: Embracing Failure, Awaken Each Day. Reflections, short practices and stories to help you live with more presence." />
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Coach Tejaswi — Author & Coach" />
-  <meta property="og:description"
-    content="Writer, coach, and storyteller. Author of Embracing Failure and Awaken Each Day." />
+  <title>Coach Tejaswi | Quietwork, Reflections & Embracing Failure</title>
+
+  <meta name="description" content="Quiet reflections, emotional clarity, and personal growth by Tejaswi Khanna. Explore Embracing Failure, Quietwork, and reflective writing." />
+
+  <meta property="og:title" content="Coach Tejaswi | Quietwork & Embracing Failure" />
+  <meta property="og:description" content="Reflections on growth, resilience, stillness, and emotional transformation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coachtejaswi.com" />
-  <meta property="og:image" content="https://coachtejaswi.com/assets/images/coachtejaswi-heroimg.jpg" />
+  <meta property="og:image" content="https://coachtejaswi.com/assets/images/embracing-failure-cover.jpg" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Coach Tejaswi — Author & Coach" />
-  <meta name="twitter:description"
-    content="Writer, coach, and storyteller. Author of Embracing Failure and Awaken Each Day." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
-    rel="stylesheet">
-
-  <!-- Shared Styles -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* Homepage Specific Styles */
 
-    /* Hero Section Override for homepage */
-    header.page-header {
+    body {
+      background: #ece6d8;
+      color: #1d1d1d;
+    }
+
+    .home-shell {
+      max-width: 1240px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .minimal-header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      padding: 20px 0;
-    }
-
-    /* Hero Banner - Full Width */
-    .hero-banner {
-      position: relative;
-      width: 100vw;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      overflow: hidden;
-      background: var(--bg);
-      display: flex;
       align-items: center;
-      justify-content: center;
-      margin-top: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
-    .hero-media {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      /* 16:9 aspect ratio */
-      overflow: hidden;
-      background: var(--bg);
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
     }
 
-    .hero-media img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-      display: block;
+    .brand-sub {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 4px;
     }
 
-    .hero-cta {
-      position: absolute;
-      inset: auto 0 8% 0;
+    .minimal-nav {
       display: flex;
-      justify-content: center;
-      z-index: 3;
-      pointer-events: none;
-    }
-
-    .hero-cta .btn {
-      pointer-events: auto;
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 8px 26px rgba(185, 139, 74, 0.16);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .hero-cta .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 34px rgba(185, 139, 74, 0.22);
-    }
-
-    /* Main Hero Content */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 420px;
       gap: 28px;
       align-items: center;
-      margin-top: 48px;
     }
 
-    .hero-left h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
-      line-height: 1.2;
-      margin: 0 0 16px;
+    .minimal-nav a {
+      text-decoration: none;
+      color: #1d1d1d;
+      font-size: 0.95rem;
     }
 
-    .hero-left p.lead {
-      color: var(--muted);
-      font-size: 17px;
-      margin: 0 0 24px;
-      max-width: 680px;
-      line-height: 1.7;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
       align-items: center;
+      min-height: 88vh;
+      padding: 60px 0;
     }
 
-    .cover-large {
-      width: 100%;
-      max-width: 320px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      line-height: 0.92;
+      font-weight: 500;
+      margin-bottom: 28px;
     }
 
-    .cover-large:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .cover-large img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .mini-bio {
-      background: var(--card);
-      padding: 16px;
-      border-radius: var(--radius);
-      max-width: 340px;
-      text-align: center;
-      box-shadow: var(--shadow-md);
-    }
-
-    .mini-bio p {
-      margin: 0;
+    .hero p {
+      font-size: 1.1rem;
       color: #333;
-      font-size: 14px;
-      line-height: 1.6;
+      max-width: 640px;
+      line-height: 1.9;
+      margin-bottom: 24px;
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero-media {
-        padding-bottom: 50%;
-        /* Slightly less tall on tablets */
-      }
-
-      .hero-cta {
-        inset: auto 0 7% 0;
-      }
-
-      .hero-cta .btn {
-        padding: 12px 22px;
-      }
+    .hero-image img {
+      width: 100%;
+      max-width: 460px;
+      display: block;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.12);
     }
 
-    @media (max-width: 900px) {
+    .cta-row {
+      display: flex;
+      gap: 18px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      padding: 14px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .cta-primary {
+      background: #1d1d1d;
+      color: #ece6d8;
+    }
+
+    .cta-secondary {
+      border: 1px solid rgba(0,0,0,0.14);
+      color: #1d1d1d;
+    }
+
+    .reflection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 28px;
+      margin-top: 80px;
+      margin-bottom: 100px;
+    }
+
+    .reflection-card {
+      background: rgba(255,255,255,0.35);
+      border-radius: 28px;
+      padding: 36px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .reflection-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .reflection-card p {
+      color: #444;
+      line-height: 1.8;
+    }
+
+    .quote-section {
+      max-width: 860px;
+      margin: 120px auto;
+      text-align: center;
+    }
+
+    .quote-section blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    .quote-section span {
+      display: block;
+      margin-top: 26px;
+      color: #666;
+    }
+
+    footer {
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding: 60px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #555;
+    }
+
+    footer a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    @media(max-width: 900px){
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .hero-right {
-        order: -1;
+      .hero h1 {
+        font-size: 4.2rem;
       }
 
-      .hero-left h2 {
-        font-size: 32px;
+      .cta-row {
+        justify-content: center;
+      }
+
+      .minimal-header {
+        flex-direction: column;
+        gap: 20px;
       }
     }
 
-    @media (max-width: 640px) {
-      .hero-media {
-        padding-bottom: 75%;
-        /* 4:3 aspect ratio on mobile */
+    @media(max-width: 640px){
+      .hero h1 {
+        font-size: 3.1rem;
       }
 
-      .hero-cta {
-        inset: auto 0 6% 0;
+      .quote-section blockquote {
+        font-size: 2rem;
       }
 
-      .hero-cta .btn {
-        padding: 10px 18px;
-        font-size: 15px;
-        border-radius: 8px;
+      .minimal-nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
+
   </style>
-
-  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-    #mc_embed_signup {
-      background: #fff;
-      clear: left;
-      font: 14px Helvetica, Arial, sans-serif;
-      width: 100%;
-    }
-    #mc_embed_signup .button {
-      background-color: var(--accent);
-      border-radius: 8px;
-    }
-    #mc_embed_signup .button:hover {
-      background-color: var(--accent-hover);
-    }
-  </style>
-  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8b6ee26d8a7abd1701d2d139e/079f000ef054d3652722bf64db.js");</script>
 </head>
 
 <body>
-  <div class="wrap">
-    <header class="page-header">
-      <a href="index.html" class="brand" aria-label="Coach Tejaswi homepage">
-        <div class="logo">CT</div>
-        <div class="brand-text">
-          <span class="name">Coach Tejaswi</span>
-          <div class="muted" style="font-size:12px;margin-top:2px">Writer • Coach • Storyteller</div>
-        </div>
-      </a>
 
-      <nav aria-label="Primary">
-        <ul style="display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center">
-          <li><a href="books.html"
-              style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">Books</a></li>
-          <li><a href="about.html"
-              style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">About</a></li>
-          <li><a href="contact.html"
-              style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">Contact</a>
-          </li>
-          <li><a href="https://substack.com/@coachtejaswi" target="_blank"
-              style="font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;color:#333">Reflections...</a>
-          </li>
-          <li><a href="#" id="subscribeBtn" class="primary">Stay Inspired</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
+  <div class="home-shell">
 
-  <!-- HERO IMAGE BANNER -->
-  <section class="hero-banner" aria-label="Homepage hero" data-animate>
-    <div class="hero-media" role="img" aria-label="Tejaswi Khanna and Embracing Failure book">
-      <img src="assets/images/coachtejaswi-heroimg.jpg" alt="Tejaswi Khanna and Embracing Failure cover" loading="lazy">
-    </div>
+    <header class="minimal-header">
 
-    <div class="hero-cta">
-      <a href="books.html" class="btn">Explore</a>
-    </div>
-  </section>
-
-  <div class="wrap">
-    <main class="hero" role="main" data-animate>
-      <div class="hero-left">
-        <h2>Small daily reflections. Big quiet changes.</h2>
-        <p class="lead">Short essays, tiny practices and stories that help you meet failure with curiosity and wake up
-          each day with calm. Author of <em>Embracing Failure</em> and upcoming <em>Awaken Each Day</em>.</p>
-
-        <div class="hero-actions" data-animate>
-          <a class="btn primary" href="books.html">See the books</a>
-          <a class="btn ghost" href="about.html">About me</a>
-          <a href="#" class="muted-link" style="margin-left: 20px;" onclick="openModal(); return false;">Stay
-            Inspired</a>
-        </div>
-
-        <div style="margin-top:18px" class="muted">Latest: Kintsugi essay — shared on LinkedIn. <a href="books.html"
-            style="text-decoration:underline">Read more</a></div>
+      <div>
+        <div class="brand-title">Coach Tejaswi</div>
+        <div class="brand-sub">Quietwork • Reflections • Personal Growth</div>
       </div>
 
-      <aside class="hero-right" aria-label="Featured book">
-        <div class="cover-large">
-          <img src="assets/images/embracing-failure-cover.jpg" alt="Embracing Failure book cover" loading="lazy">
+      <nav class="minimal-nav">
+        <a href="/embracing-failure">Embracing Failure</a>
+        <a href="/books">Books</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="https://substack.com/@coachtejaswi" target="_blank">Reflections</a>
+      </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+      <div>
+
+        <h1>
+          Quiet reflections.
+          Deep change.
+        </h1>
+
+        <p>
+          Quietwork is a space for introspection, emotional clarity, resilience,
+          and personal transformation.
+        </p>
+
+        <p>
+          Through reflections, books, and reflective writing,
+          Tejaswi Khanna explores how failure, stillness,
+          uncertainty, and emotional honesty shape meaningful growth.
+        </p>
+
+        <div class="cta-row">
+          <a href="/embracing-failure" class="cta-btn cta-primary">Explore the Book</a>
+          <a href="https://substack.com/@coachtejaswi" target="_blank" class="cta-btn cta-secondary">Read Reflections</a>
         </div>
 
-        <div class="mini-bio">
-          <p><strong>Embracing Failure</strong> — a short book about how broken moments teach us to be whole. Available
-            on Amazon, Flipkart and Notion Press.</p>
-        </div>
-      </aside>
-    </main>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/images/embracing-failure-cover.jpg" alt="Embracing Failure book cover">
+      </div>
+
+    </section>
+
+
+    <section class="reflection-grid">
+
+      <div class="reflection-card">
+        <h3>Quietwork</h3>
+        <p>
+          Thematic reflections and emotionally resonant quotes exploring growth,
+          healing, silence, resilience, and inner clarity.
+        </p>
+      </div>
+
+      <div class="reflection-card">
+        <h3>Embracing Failure</h3>
+        <p>
+          A reflective exploration of setbacks, collapses, emotional recovery,
+          and the wisdom hidden inside failure.
+        </p>
+      </div>
+
+      <div class="reflection-card">
+        <h3>Reflections</h3>
+        <p>
+          Essays and personal reflections on overthinking, emotional resilience,
+          stillness, and meaningful growth.
+        </p>
+      </div>
+
+    </section>
+
+
+    <section class="quote-section">
+
+      <blockquote>
+        “Failure rarely destroys us.
+        More often, it reveals us.”
+      </blockquote>
+
+      <span>— Tejaswi Khanna</span>
+
+    </section>
+
 
     <footer>
-      <small>© <span id="year"></span> Tejaswi Khanna</small>
-      <div class="muted">Follow: <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank">LinkedIn</a> • <a
-          href="https://instagram.com/coachtejaswi" target="_blank">Instagram</a></div>
+
+      <div>
+        © 2026 Tejaswi Khanna
+      </div>
+
+      <div>
+        <a href="https://instagram.com/coachtejaswi" target="_blank">Instagram</a>
+        •
+        <a href="https://www.linkedin.com/in/tejaswikhanna" target="_blank">LinkedIn</a>
+      </div>
+
     </footer>
+
   </div>
-
-  <!-- Subscribe modal -->
-  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" role="document">
-      <div id="mc_embed_shell">
-        <div id="mc_embed_signup">
-          <form action="https://coachtejaswi.us21.list-manage.com/subscribe/post?u=8b6ee26d8a7abd1701d2d139e&amp;id=b3395d7500&amp;f_id=00eb35e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-            <div id="mc_embed_signup_scroll">
-              <h2>Join the Journey</h2>
-              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-              <div class="mc-field-group">
-                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
-              </div>
-              <div class="mc-field-group">
-                <label for="mce-FNAME">First Name <span class="asterisk">*</span></label>
-                <input type="text" name="FNAME" class="required text" id="mce-FNAME" required="" value="">
-              </div>
-              <div id="mce-responses" class="clear foot">
-                <div class="response" id="mce-error-response" style="display: none;"></div>
-                <div class="response" id="mce-success-response" style="display: none;"></div>
-              </div>
-              <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                <input type="text" name="b_8b6ee26d8a7abd1701d2d139e_b3395d7500" tabindex="-1" value="">
-              </div>
-              <div class="optionalParent">
-                <div class="clear foot">
-                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div style="margin-top:14px;text-align:right">
-        <button onclick="closeModal()" style="background:none;border:none;color:#666;cursor:pointer;text-decoration:underline">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Supabase Integration -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase-config.js"></script>
-
-  <!-- Shared JavaScript -->
-  <script src="script.js"></script>
-  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-  <script type="text/javascript" src="mailchimp-config.js"></script>
-
 
 </body>
-
 </html>
